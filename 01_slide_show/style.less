@@ -1,0 +1,27 @@
+body {
+    width: 600px;
+    height: 400px;
+    border: 1px solid #000;
+    display: flex;
+}
+
+.control-btn {
+    flex-basis: 100px;
+}
+
+.slide-container {
+    flex: 1;
+    overflow: hidden;
+
+    .slides {
+        width: 2000px;
+        display: flex;
+        transition: 0.5s all;
+
+        .slide {
+            width: 400px;
+            object-fit: cover;
+        }
+    }
+}
+
