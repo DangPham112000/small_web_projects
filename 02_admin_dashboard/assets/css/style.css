@@ -3,3 +3,8 @@
     --color-dark: #1D2231;
     --text-gray: #8390A2;
 }
+
+.main-content .user-wrapper img{
+    width: 40px;
+    height: 40px;
+}
