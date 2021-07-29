@@ -87,11 +87,11 @@
 
 /* p ~ ul	
     Selects every <ul> element that is preceded by a <p> element */
-#nav-toggle:checked ~ .main-content{
+#nav-toggle:checked ~ .main-content {
     margin-left: 70px;
 }
 
-#nav-toggle:checked ~ .main-content header{
+#nav-toggle:checked ~ .main-content header {
     left: 70px;
     width: calc(100% - 70px);
 }
@@ -149,6 +149,10 @@ header label span {
     height: 100%;
     border: none;
     padding: 0.5rem;
+}
+
+.search-wrapper input:focus {    
+    outline: none;
 }
 
 .user-wrapper {
