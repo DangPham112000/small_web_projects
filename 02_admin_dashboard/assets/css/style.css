@@ -112,6 +112,7 @@ header {
     left: 345px;
     top: 0;
     width: calc(100% - 345px);
+    height: 85px;
     z-index: 1;
     transition: left 300ms;
 }
