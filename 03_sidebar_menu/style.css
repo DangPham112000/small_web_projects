@@ -15,11 +15,16 @@ body {
     top: 20px;
     bottom: 20px;
     left: 20px;
-    width: 300px;
+    width: 70px;
     border-radius: 10px;
     box-sizing: initial;
     background-color: #4d5bf9;
     transition: width 0.5s;
+    overflow-x: hidden;
+}
+
+.navigation.active {
+    width: 300px;
 }
 
 .list-item {
@@ -27,7 +32,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    padding-left: 10px;
+    padding-left: 5px;
     padding-top: 40px;
 }
 
@@ -69,4 +74,41 @@ body {
     position: relative;
     display: block;
     padding-left: 10px;
+}
+
+.toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #4d5bf9;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.toggle.active {
+    background-color: #ff4d89;
+}
+
+.toggle ion-icon {
+    color: #fff;
+    font-size: 34px;
+    display: none;
+}
+/* 
+    when toggle active: add close, rm open
+    when toggle: add open, rm close
+ */
+.toggle.active ion-icon.close,
+.toggle ion-icon.open {
+    display: block;
+}
+
+.toggle.active ion-icon.open,
+.toggle ion-icon.close {
+    display: none;
 }
