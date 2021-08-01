@@ -10,33 +10,74 @@ body {
 }
 
 .cards {
+    --spacing: 25px;
+    --columns: 4;
     display: flex;
     flex-wrap: wrap;
-    margin-left: -30px;
+    margin-left: calc(-1 * var(--spacing));
+}
+
+@media screen and (max-width: 1023px) {
+    .cards {
+        --columns: 2;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .cards {
+        --spacing: 15px;
+        --columns: 1;
+    }
 }
 
 .card {
+    display: flex;
+    flex-direction: column;
     border-radius: 20px;
     overflow: hidden;
     background-color: #fff;
     box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
-    width: calc(25% - 30px);
-    margin-left: 30px;
+    width: calc(calc(100% / var(--columns)) - var(--spacing));
+    margin-left: var(--spacing);
+    margin-bottom: var(--spacing);
 }
 
 .card-image {
     height: 200px;
     width: 100%;
     object-fit: cover;
+    /* Giữ phần tử không được co lại, khi height 200 thì vẫn luôn 200 */
+    flex-shrink: 0;
+}
+
+.card-content {
+    /* background-color: red; */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .card-top {
     padding: 25px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .card-title {
     font-weight: 500;
     margin-bottom: 25px;
+    flex: 1;
+    /* Hiển thị các chữ bị ẩn do nối liền nhau quá dài */
+    word-break: break-all; 
+
+    /* giới hạn số dòng hiển thị */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: beak-word;
 }
 
 .card-user {
@@ -109,3 +150,4 @@ body {
     color: #999;
     font-weight: 300;
 }
+
