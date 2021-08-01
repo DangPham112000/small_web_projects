@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {    
+    font-family: "poppins", sans-serif;
+    padding: 20px;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -30px;
+}
+
+.card {
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+    width: calc(25% - 30px);
+    margin-left: 30px;
+}
+
+.card-image {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.card-top {
+    padding: 25px;
+}
+
+.card-title {
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+
+.card-user {
+    display: flex;
+    align-items: center;
+}
+
+.card-user-avatar {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.card-user-info {
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.card-user-top {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2px;
+}
+
+.card-user-name {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1;
+}
+
+.card-user-top ion-icon {
+    color: #20e3b2;
+    margin-left: 5px;
+}
+
+.card-user-game {
+    color: #999;
+    font-weight: 300;
+    font-size: 13px;
+}
+
+.card-bottom {
+    padding: 25px;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-live {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 5px 15px;
+    background-color: #ff6651;
+    border-radius: 10px;
+}
+
+.card-live span {
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+.card-watching {
+    font-size: 13px;
+    color: #999;
+    font-weight: 300;
+}
