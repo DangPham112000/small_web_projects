@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f1f8;
+}
+
+.question-box h2 {
+    margin: 0;
+    font-weight: 500;
+}
+
+
+.question-box span {
+    margin: 10px;
+    font-size: 13px;
+    color: #9297a6;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.quiz-container {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* width: 633px; */
+    /* height: 533px; */
+    box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    min-width: 630px;
+}
+
+.top-container {
+    display: flex;
+    padding: 75px 90px;
+    flex-direction: column;
+}
+
+.question-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* margin-bottom: 40px; */
+}
+
+.answer-box li {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.answer-box li label {
+    font-weight: 500;
+    font-size: 16px;
+    margin-left: 10px;
+    cursor: pointer;
+    
+}
+
+.answer-box li input {
+    margin: 0;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.bottom-container {
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+}
+
+.bottom-container button {
+    background-color: #4573f4;
+    border: none;
+    color: #fff;
+    height: inherit;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: inherit;
+    cursor: pointer;
+    /* padding: 2rem 0; */
+}
+
+.bottom-container button:hover {
+    opacity: 0.9;
+}
