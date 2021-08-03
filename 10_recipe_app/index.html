@@ -12,8 +12,14 @@
 <body>
     <div class="mobile-container">
         <header>
+            <button>
+                <i class="fas fa-bars"></i>
+            </button>
+            <img src="./logo.png" alt="">
             <input type="text">
-            <button id="search"><i class="fas fa-search"></i></button>
+            <button id="search" class="search">
+                <i class="fas fa-search"></i>
+            </button>
         </header>
         <div class="fav-container">
             <h3>Favorite Meals</h3>
@@ -36,21 +42,24 @@
                 </li>
             </ul>
         </div>
-        <div class="meals">
-            <div class="meal">
-                <div class="meal-header">
-                    <span class="random">
-                        Random Recipe
-                    </span>
-                    <img src="https://www.themealdb.com/images/media/meals/wai9bw1619788844.jpg" alt="">
+        <div class="meals" id="meals">
+            <div class="meal personalize">
+                <div class="top-personalize">
+                    <div class="text-top">
+                        <h3>Personalize</h3>
+                        <span>your recommandations</span>
+                    </div>
+                    <button class="close-btn">
+                        <i class="fas fa-times"></i>
+                    </button>
                 </div>
-                <div class="meal-body">
-                    <h4>Nasi lemak</h4>
-                    <button class="fav-btn">
-                        <i class="fas fa-heart"></i>
+                <div class="body-personalize">
+                    <button class="personilizing-btn">
+                        START PERSONILIZING
                     </button>
                 </div>
             </div>
+            
         </div>
     </div>
 </body>
