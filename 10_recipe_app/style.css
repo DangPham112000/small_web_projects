@@ -92,6 +92,31 @@ header button.search {
     justify-content: center;
     align-items: center;
     margin: 10px;
+    width: 70px;
+    position: relative;
+}
+
+.fav-meals li button {
+    position: absolute;
+    top: -2px;
+    right: -10px;
+    border: none;
+    background-color: transparent;
+    display: none;
+}
+
+.fav-meals li:hover button {
+    display: block;
+    cursor: pointer;
+}
+
+.fav-meals li button i {
+    color: #ccc;
+    font-size: 20px;
+}
+
+.fav-meals li button:hover i {
+    color: #fb00ffe5;
 }
 
 .fav-meals li img {
@@ -106,6 +131,11 @@ header button.search {
 
 .fav-meals li span {
     font-size: 0.8rem;
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 70px;
 }
 
 .personalize {
