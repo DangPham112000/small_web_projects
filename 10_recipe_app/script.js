@@ -1,22 +1,21 @@
-/**
- * <div class="meal">
-        <div class="meal-header">
-            <span class="random">
-                Random Recipe
-            </span>
-            <img src="https://www.themealdb.com/images/media/meals/wai9bw1619788844.jpg" alt="">
-        </div>
-        <div class="meal-body">
-            <h4>Nasi lemak</h4>
-            <button class="fav-btn active">
-                <i class="fas fa-heart"></i>
-            </button>
-        </div>
-    </div>
- */
-
 const mealsEl = document.getElementById('meals');
 const favoriteContainer = document.getElementById('fav-meals');
+const searchBlock = $('header .search-block');
+
+const searchTerm = document.getElementById('search-term');
+const searchBtn = document.getElementById('search');
+
+searchBlock.hover(
+    function() {
+        $('header input').show();
+        $('header img').hide();
+    }, 
+    function() {
+        $('header input').hide();
+        $('header img').show();
+    }
+);
+
 
 getRandomMeal();
 fetchFavMeals();
@@ -37,12 +36,32 @@ async function getMealById(id) {
     return meal;
 }
 
-async function searchByName(name) {
-    const meals = await fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=' + name);
+async function getMealBySearch(term) {
+    const resp = await fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=' + term);
+    const respData = await resp.json();
+    const meals = respData.meals;
+    
+    return meals;
 }
 
+
+/**
+ * <div class="meal">
+        <div class="meal-header">
+            <span class="random">
+                Random Recipe
+            </span>
+            <img src="https://www.themealdb.com/images/media/meals/wai9bw1619788844.jpg" alt="">
+        </div>
+        <div class="meal-body">
+            <h4>Nasi lemak</h4>
+            <button class="fav-btn active">
+                <i class="fas fa-heart"></i>
+            </button>
+        </div>
+    </div>
+ */
 function addMeal(mealData, random = false) {
-    console.log(mealData);
     
     const meal = document.createElement('div');
     meal.classList.add('meal');
@@ -133,3 +152,18 @@ function addMealFav(mealData) {
 
     favoriteContainer.appendChild(favMeal);
 }
+
+searchBtn.addEventListener('click', async () => {
+    // clear meals container
+    mealsEl.innerHTML = '';
+    
+    const searchText = searchTerm.value;
+
+    const meals = await getMealBySearch(searchText);
+
+    if (meals) {
+        meals.forEach(meal => {
+            addMeal(meal);
+        });
+    }
+});

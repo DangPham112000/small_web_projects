@@ -37,6 +37,7 @@ img {
 }
 
 header {
+    height: 72px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -64,8 +65,17 @@ header img {
     width: 100px;
 }
 
+header .search-block {
+    display: flex;
+}
+
 header button.search {
     font-size: 1.4rem;
+    position: relative;
+}
+
+header button.search:hover {
+    color: #fb00ffe5;
 }
 
 .fav-container {
