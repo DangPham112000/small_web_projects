@@ -160,6 +160,10 @@ header button.search:hover {
     /* display: none; */
 }
 
+.personalize.hidden{
+    display: none;
+}
+
 .top-personalize {
     display: flex;
     justify-content: space-between;
@@ -258,4 +262,71 @@ header button.search:hover {
 
 .meal-body .fav-btn.active {
     color: rebeccapurple;
+}
+
+/* Popup */
+
+.meal-info-container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.meal-info-container.hidden {
+    display: none;
+}
+
+.meal-info {
+    max-width: 400px;
+    max-height: 100vh;
+    background-color: #fff;
+    width: 100%;
+    padding: 24px;
+    position: relative;
+    border-radius: 5px;
+    overflow: auto;
+}
+
+.meal-info #close-meal-info-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: transparent;
+    color: #ccc;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.meal-info #close-meal-info-container:hover i {
+    color: #fb00ffe5;
+}
+
+.meal-info h1 {
+    margin: 0;
+    font-size: 24px;
+    padding-bottom: 24px;
+    text-align: center;
+}
+
+.meal-info img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.meal-info p {
+    font-size: 12px;
+}
+
+.meal-info ul {
+    font-size: 12px;
+    list-style-type: disc;
+    margin-left: 30px;
 }
