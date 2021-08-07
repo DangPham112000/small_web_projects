@@ -64,6 +64,7 @@ function handleControlImg(control) {
     }
 }
 
+// hide a button
 function hideBtn(index) {
     const lightboxControlBtn = document.querySelectorAll('.lightbox .control-btn');
     if (index === 0) {
