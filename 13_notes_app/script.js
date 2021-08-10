@@ -1,6 +1,18 @@
 const addNoteBtn = document.querySelector('.add-btn');
 
+const notesData = JSON.parse(localStorage.getItem('notes'));
+
+if (notesData) {
+    notesData.forEach(noteData => {
+        addNewNote(noteData);
+    });
+}
+
 addNoteBtn.addEventListener('click', () => {
+    addNewNote();
+});
+
+function addNewNote(noteData = '') {
     const noteEl = document.createElement('div');
     noteEl.classList.add('note');
 
@@ -19,11 +31,16 @@ addNoteBtn.addEventListener('click', () => {
 
     const mainEl = noteEl.querySelector('.main');
     const textareaEl = noteEl.querySelector('textarea');
+    textareaEl.value = noteData;
 
     editBtn.addEventListener('click', () => {
         mainEl.classList.toggle('hidden');
         textareaEl.classList.toggle('hidden');
     });
+    if (noteData) {
+        editBtn.click();
+        mainEl.innerHTML = marked(noteData);
+    }
 
     deleteBtn.addEventListener('click', () => {
         noteEl.remove();
@@ -33,10 +50,22 @@ addNoteBtn.addEventListener('click', () => {
         const value = e.target.value;
 
         mainEl.innerHTML = marked(value);
+
+        updateLS();
     });
 
     document.body.appendChild(noteEl);
-});
+}
+
+
+function updateLS() {
+    const textareaEls = document.querySelectorAll('textarea');
+
+    const notesData = [];
+    textareaEls.forEach(textareaEl => notesData.push(textareaEl.value));
+
+    localStorage.setItem('notes', JSON.stringify(notesData));
+}
 
 
 
