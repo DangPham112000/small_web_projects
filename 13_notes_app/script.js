@@ -37,6 +37,7 @@ function addNewNote(noteData = '') {
         mainEl.classList.toggle('hidden');
         textareaEl.classList.toggle('hidden');
     });
+
     if (noteData) {
         editBtn.click();
         mainEl.innerHTML = marked(noteData);
@@ -44,6 +45,9 @@ function addNewNote(noteData = '') {
 
     deleteBtn.addEventListener('click', () => {
         noteEl.remove();
+        
+        // after remove note from DOM then send new data to LS        
+        updateLS();
     });
 
     textareaEl.addEventListener('input', (e) => {
@@ -57,16 +61,19 @@ function addNewNote(noteData = '') {
     document.body.appendChild(noteEl);
 }
 
-
-function updateLS() {
+function getDataFromDOM() {
     const textareaEls = document.querySelectorAll('textarea');
 
     const notesData = [];
     textareaEls.forEach(textareaEl => notesData.push(textareaEl.value));
+    return notesData;
+}
+
+function updateLS() {
+    const notesData = getDataFromDOM();
 
     localStorage.setItem('notes', JSON.stringify(notesData));
 }
-
 
 
 
