@@ -41,7 +41,6 @@ form {
 }
 
 .todos {
-    border-top: 1px solid #ccc;
     background-color: #fff;
     margin: 0;
     padding: 0;
@@ -52,5 +51,40 @@ form {
     border-top: 1px solid #ccc;
     font-weight: 400;
     font-size: 24px;
-    padding: 16px 16px 16px 60px;
+    padding: 16px;
+    color: #4d4d4d;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.todos li i {
+    color: #ccc;
+    cursor: pointer;
+} 
+
+.todos li .front {
+    display: flex;
+    align-items: center;
+}
+
+.todos li .front i {
+    padding-right: 16px;
+}
+
+.todos li .front p {
+    margin: 0;
+}
+
+.todos li .back:hover {
+    color: #4d4d4d;
+}
+
+.todos li.completed p {
+    text-decoration: line-through;
+    color: #ccc;
+}
+
+.todos li.completed .front i {
+    color: #4d4d4d;
 }
