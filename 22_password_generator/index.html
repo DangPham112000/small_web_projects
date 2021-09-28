@@ -25,30 +25,32 @@
         <div class="header">
             <h1 class="title">Password Generator</h1>
             <div class="password">
-                <button class="btn btn-copy">Copy to clipboard</button>
+                <!-- abcnsas -->
+                <span id="password"></span>
+                <button id="btn-copy" class="btn btn-copy">Copy to clipboard</button>
             </div>
         </div>
 
         <div class="body">
             <div class="form-control">
                 <label for="len">Password length</label>
-                <input id="len" type="number" min="4" max="40"></input>
+                <input id="len" type="number" value="8" min="4" max="40"></input>
             </div>
             <div class="form-control">
                 <label for="upper">Include uppercase letters</label>
-                <input id="upper" type="checkbox"></input>
+                <input id="upper" type="checkbox" checked="true"></input>
             </div>
             <div class="form-control">
                 <label for="lower">Include lowercase letters</label>
-                <input id="lower" type="checkbox"></input>
+                <input id="lower" type="checkbox" checked="true"></input>
             </div>
             <div class="form-control">
                 <label for="num">Include numbers</label>
-                <input id="num" type="checkbox"></input>
+                <input id="num" type="checkbox" checked="true"></input>
             </div>
             <div class="form-control">
                 <label for="sym">Include symbols</label>
-                <input id="sym" type="checkbox"></input>
+                <input id="sym" type="checkbox" checked="true"></input>
             </div>
             <button id="btn-generate" class="btn btn-generate">Generate password</button>
         </div>
