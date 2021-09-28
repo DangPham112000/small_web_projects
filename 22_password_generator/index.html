@@ -1,0 +1,58 @@
+<!-- 
+    Password Generator
+    Design: https://codepen.io/FlorinPop17/full/BaBePej
+    numbers
+    letters
+    symbols
+    copy to clipboard
+
+    referent source: https://www.youtube.com/watch?v=dtKciwk_si4&t=17208s 7:22:42
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="title">Password Generator</h1>
+            <div class="password">
+                <button class="btn btn-copy">Copy to clipboard</button>
+            </div>
+        </div>
+
+        <div class="body">
+            <div class="form-control">
+                <label for="len">Password length</label>
+                <input id="len" type="number" min="4" max="40"></input>
+            </div>
+            <div class="form-control">
+                <label for="upper">Include uppercase letters</label>
+                <input id="upper" type="checkbox"></input>
+            </div>
+            <div class="form-control">
+                <label for="lower">Include lowercase letters</label>
+                <input id="lower" type="checkbox"></input>
+            </div>
+            <div class="form-control">
+                <label for="num">Include numbers</label>
+                <input id="num" type="checkbox"></input>
+            </div>
+            <div class="form-control">
+                <label for="sym">Include symbols</label>
+                <input id="sym" type="checkbox"></input>
+            </div>
+            <button id="btn-generate" class="btn btn-generate">Generate password</button>
+        </div>
+    </div>
+</body>
+
+</html>
